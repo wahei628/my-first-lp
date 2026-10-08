@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFÉ MORI | 森の中のコーヒーショップ</title>
+  <meta name="description" content="CAFÉ MORI は、森の静けさを感じる自家焙煎のコーヒーショップです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー / ナビゲーション -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#hero" class="logo">CAFÉ <span>MORI</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#hero" class="nav__link">Home</a></li>
+          <li><a href="#concept" class="nav__link">Concept</a></li>
+          <li><a href="#menu" class="nav__link">Menu</a></li>
+          <li><a href="#access" class="nav__link">Access</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ヒーローセクション -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__leaf hero__leaf--1"></div>
+        <div class="hero__leaf hero__leaf--2"></div>
+        <div class="hero__leaf hero__leaf--3"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">Specialty Coffee &amp; Bake</p>
+        <h1 class="hero__title">
+          <span class="hero__title-en">CAFÉ MORI</span>
+          <span class="hero__title-ja">森の静けさを、一杯に。</span>
+        </h1>
+        <p class="hero__lead">
+          木漏れ日の差し込む店内で、丁寧に焙煎した豆を一杯ずつハンドドリップ。<br class="pc-only">
+          日々の喧騒から少しだけ離れる、小さな森のような時間をお届けします。
+        </p>
+        <a href="#menu" class="btn">メニューを見る</a>
+      </div>
+
+      <div class="hero__cup" aria-hidden="true">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <g class="steam">
+            <path d="M80 60 C 70 45, 90 35, 80 20" />
+            <path d="M100 55 C 90 40, 110 30, 100 12" />
+            <path d="M120 60 C 110 45, 130 35, 120 20" />
+          </g>
+          <ellipse cx="100" cy="170" rx="70" ry="10" class="saucer" />
+          <path d="M45 80 H155 L145 150 Q143 165 128 165 H72 Q57 165 55 150 Z" class="cup" />
+          <path d="M155 95 Q180 95 178 118 Q176 140 148 138" class="handle" />
+          <ellipse cx="100" cy="80" rx="55" ry="8" class="coffee" />
+        </svg>
+      </div>
+
+      <a href="#concept" class="hero__scroll" aria-label="下へスクロール">
+        <span>Scroll</span>
+      </a>
+    </section>
+
+    <!-- コンセプト -->
+    <section class="section concept" id="concept">
+      <div class="container concept__inner">
+        <div class="concept__text fade-in">
+          <p class="section__label">Concept</p>
+          <h2 class="section__title">森の恵みを、<br>まっすぐに。</h2>
+          <p>
+            CAFÉ MORI は、小さな雑木林に囲まれた一軒家のコーヒーショップです。
+            世界各地の農園から届く生豆を店内の焙煎機で少量ずつ焼き上げ、
+            その日いちばん美味しい状態でお出ししています。
+          </p>
+          <p>
+            焼き菓子は、国産小麦と季節の果物を使った手づくり。
+            ゆっくりと流れる時間とともにお楽しみください。
+          </p>
+        </div>
+        <ul class="concept__points fade-in">
+          <li><span class="concept__num">01</span><strong>自家焙煎</strong>毎朝焼き上げる新鮮な豆</li>
+          <li><span class="concept__num">02</span><strong>ハンドドリップ</strong>一杯ずつ丁寧に抽出</li>
+          <li><span class="concept__num">03</span><strong>手づくり菓子</strong>季節の素材を使った焼き菓子</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- メニュー -->
+    <section class="section menu" id="menu">
+      <div class="container">
+        <div class="section__head fade-in">
+          <p class="section__label">Menu</p>
+          <h2 class="section__title">メニュー</h2>
+        </div>
+
+        <div class="menu__tabs fade-in" role="tablist">
+          <button class="menu__tab is-active" role="tab" aria-selected="true" data-target="coffee">Coffee</button>
+          <button class="menu__tab" role="tab" aria-selected="false" data-target="drink">Drink</button>
+          <button class="menu__tab" role="tab" aria-selected="false" data-target="sweets">Sweets</button>
+        </div>
+
+        <div class="menu__panel is-active" id="coffee" role="tabpanel">
+          <article class="menu-card">
+            <div class="menu-card__img menu-card__img--blend"></div>
+            <div class="menu-card__body">
+              <h3>森のブレンド<span>Mori Blend</span></h3>
+              <p>深煎りのコクとほのかな甘み。当店いちばん人気の定番ブレンド。</p>
+              <p class="menu-card__price">¥580</p>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="menu-card__img menu-card__img--single"></div>
+            <div class="menu-card__body">
+              <h3>本日のシングルオリジン<span>Single Origin</span></h3>
+              <p>季節ごとに入れ替わる産地の個性を、浅〜中煎りで。</p>
+              <p class="menu-card__price">¥680</p>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="menu-card__img menu-card__img--latte"></div>
+            <div class="menu-card__body">
+              <h3>カフェラテ<span>Café Latte</span></h3>
+              <p>エスプレッソとなめらかなスチームミルク。オーツミルクにも変更可。</p>
+              <p class="menu-card__price">¥620</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu__panel" id="drink" role="tabpanel" hidden>
+          <article class="menu-card">
+            <div class="menu-card__img menu-card__img--tea"></div>
+            <div class="menu-card__body">
+              <h3>ほうじ茶ラテ<span>Hojicha Latte</span></h3>
+              <p>香ばしい京都産ほうじ茶に、やさしいミルクを合わせて。</p>
+              <p class="menu-card__price">¥600</p>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="menu-card__img menu-card__img--lemon"></div>
+            <div class="menu-card__body">
+              <h3>自家製レモネード<span>Homemade Lemonade</span></h3>
+              <p>瀬戸内レモンを蜂蜜で漬け込んだ、爽やかな一杯。</p>
+              <p class="menu-card__price">¥550</p>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="menu-card__img menu-card__img--choco"></div>
+            <div class="menu-card__body">
+              <h3>ホットチョコレート<span>Hot Chocolate</span></h3>
+              <p>カカオ70%のチョコレートを溶かした、濃厚な味わい。</p>
+              <p class="menu-card__price">¥650</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu__panel" id="sweets" role="tabpanel" hidden>
+          <article class="menu-card">
+            <div class="menu-card__img menu-card__img--cake"></div>
+            <div class="menu-card__body">
+              <h3>森のチーズケーキ<span>Baked Cheesecake</span></h3>
+              <p>しっとり濃厚なベイクドタイプ。深煎りコーヒーと相性抜群。</p>
+              <p class="menu-card__price">¥520</p>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="menu-card__img menu-card__img--scone"></div>
+            <div class="menu-card__body">
+              <h3>季節のスコーン<span>Seasonal Scone</span></h3>
+              <p>外はさっくり、中はふんわり。クロテッドクリーム添え。</p>
+              <p class="menu-card__price">¥420</p>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="menu-card__img menu-card__img--tart"></div>
+            <div class="menu-card__body">
+              <h3>フルーツタルト<span>Fruit Tart</span></h3>
+              <p>旬の果物をたっぷりのせた、見た目にも華やかなタルト。</p>
+              <p class="menu-card__price">¥680</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- アクセス -->
+    <section class="section access" id="access">
+      <div class="container">
+        <div class="section__head fade-in">
+          <p class="section__label">Access</p>
+          <h2 class="section__title">アクセス</h2>
+        </div>
+
+        <div class="access__inner">
+          <div class="access__map fade-in" aria-label="地図（イメージ）">
+            <div class="map">
+              <div class="map__road map__road--h"></div>
+              <div class="map__road map__road--v"></div>
+              <div class="map__station">森の台駅</div>
+              <div class="map__park">森の台公園</div>
+              <div class="map__pin">
+                <span class="map__pin-label">CAFÉ MORI</span>
+              </div>
+            </div>
+          </div>
+
+          <dl class="access__info fade-in">
+            <div>
+              <dt>住所</dt>
+              <dd>〒000-0000<br>東京都森の台市木漏れ日町 1-2-3</dd>
+            </div>
+            <div>
+              <dt>アクセス</dt>
+              <dd>森の台駅 北口より徒歩 5 分</dd>
+            </div>
+            <div>
+              <dt>営業時間</dt>
+              <dd>8:00 – 18:00（L.O. 17:30）</dd>
+            </div>
+            <div>
+              <dt>定休日</dt>
+              <dd>毎週水曜日</dd>
+            </div>
+            <div>
+              <dt>電話番号</dt>
+              <dd>00-0000-0000</dd>
+            </div>
+            <div>
+              <dt>席数</dt>
+              <dd>24 席（テラス 8 席）</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#hero" class="logo logo--footer">CAFÉ <span>MORI</span></a>
+    <p class="footer__copy">&copy; <span id="year"></span> CAFÉ MORI. All rights reserved.</p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="ページの先頭へ戻る">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
