@@ -134,6 +134,66 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ---------------------------
+     お問い合わせフォームのバリデーション
+     --------------------------- */
+  const contactForm = document.getElementById("contactForm");
+  const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const contactRules = [
+    {
+      field: document.getElementById("contactName"),
+      validate: (value) => (value ? "" : "お名前を入力してください。"),
+    },
+    {
+      field: document.getElementById("contactEmail"),
+      validate: (value) => {
+        if (!value) return "メールアドレスを入力してください。";
+        if (!EMAIL_PATTERN.test(value)) return "メールアドレスの形式が正しくありません。";
+        return "";
+      },
+    },
+    {
+      field: document.getElementById("contactMessage"),
+      validate: (value) => (value ? "" : "お問い合わせ内容を入力してください。"),
+    },
+  ];
+
+  const validateField = ({ field, validate }) => {
+    const message = validate(field.value.trim());
+    const error = document.getElementById(field.getAttribute("aria-describedby"));
+    error.textContent = message;
+    field.setAttribute("aria-invalid", String(Boolean(message)));
+    return !message;
+  };
+
+  contactRules.forEach((rule) => {
+    // 一度エラーになった項目は、入力のたびに再チェックしてエラーを消す
+    rule.field.addEventListener("input", () => {
+      if (rule.field.getAttribute("aria-invalid") === "true") validateField(rule);
+    });
+    rule.field.addEventListener("blur", () => {
+      if (rule.field.value.trim()) validateField(rule);
+    });
+  });
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const invalidRule = contactRules
+      .map((rule) => ({ rule, isValid: validateField(rule) }))
+      .find(({ isValid }) => !isValid);
+
+    if (invalidRule) {
+      invalidRule.rule.field.focus();
+      return;
+    }
+
+    alert("送信しました");
+    contactForm.reset();
+    contactRules.forEach(({ field }) => field.removeAttribute("aria-invalid"));
+  });
+
+  /* ---------------------------
      フッターの年
      --------------------------- */
   document.getElementById("year").textContent = new Date().getFullYear();
