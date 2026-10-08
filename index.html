@@ -27,6 +27,7 @@
           <li><a href="#concept" class="nav__link">Concept</a></li>
           <li><a href="#menu" class="nav__link">Menu</a></li>
           <li><a href="#access" class="nav__link">Access</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -242,6 +243,44 @@
             </div>
           </dl>
         </div>
+      </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section__head fade-in">
+          <p class="section__label">Contact</p>
+          <h2 class="section__title">お問い合わせ</h2>
+          <p class="contact__lead">
+            ご予約・貸切・豆のご注文など、お気軽にお問い合わせください。<br class="pc-only">
+            通常 2〜3 営業日以内にご返信いたします。
+          </p>
+        </div>
+
+        <form class="contact-form fade-in" id="contactForm" novalidate>
+          <div class="contact-form__field">
+            <label for="contactName">お名前<span class="contact-form__required">必須</span></label>
+            <input type="text" id="contactName" name="name" autocomplete="name" placeholder="森 太郎" aria-describedby="contactNameError">
+            <p class="contact-form__error" id="contactNameError" aria-live="polite"></p>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="contactEmail">メールアドレス<span class="contact-form__required">必須</span></label>
+            <input type="email" id="contactEmail" name="email" autocomplete="email" placeholder="example@cafe-mori.jp" aria-describedby="contactEmailError">
+            <p class="contact-form__error" id="contactEmailError" aria-live="polite"></p>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="contactMessage">お問い合わせ内容<span class="contact-form__required">必須</span></label>
+            <textarea id="contactMessage" name="message" rows="6" placeholder="お問い合わせ内容をご記入ください" aria-describedby="contactMessageError"></textarea>
+            <p class="contact-form__error" id="contactMessageError" aria-live="polite"></p>
+          </div>
+
+          <div class="contact-form__submit">
+            <button type="submit" class="btn btn--forest">送信する</button>
+          </div>
+        </form>
       </div>
     </section>
   </main>
