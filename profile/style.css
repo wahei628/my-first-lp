@@ -1,0 +1,141 @@
+/* ===========================
+   変数
+   =========================== */
+:root {
+  --color-bg: #f4f5f7;
+  --color-card: #ffffff;
+  --color-text: #1f2328;
+  --color-muted: #6b7280;
+  --color-accent: #4f6bed;
+  --color-accent-light: #8ea2ff;
+
+  --font-base: "Noto Sans JP", sans-serif;
+
+  --radius: 20px;
+  --shadow: 0 16px 40px rgba(31, 35, 40, 0.08);
+}
+
+/* ===========================
+   リセット / ベース
+   =========================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===========================
+   プロフィール
+   =========================== */
+.profile {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+}
+
+.profile__card {
+  width: 100%;
+  max-width: 420px;
+  padding: 56px 40px;
+  text-align: center;
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.8s ease-out both;
+}
+
+/* 名前の丸アイコン */
+.profile__avatar {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 28px;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  border-radius: 50%;
+}
+
+.profile__name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.profile__role {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 4px 16px;
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  background: rgba(79, 107, 237, 0.08);
+  border-radius: 999px;
+}
+
+.profile__bio {
+  margin-top: 24px;
+  font-size: 0.9375rem;
+  text-align: left;
+}
+
+/* ===========================
+   フッター
+   =========================== */
+.footer {
+  padding: 24px 16px;
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* ===========================
+   アニメーション
+   =========================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 動きを減らす設定のときはアニメーションしない */
+@media (prefers-reduced-motion: reduce) {
+  .profile__card {
+    animation: none;
+  }
+}
+
+/* ===========================
+   スマホ
+   =========================== */
+@media (max-width: 480px) {
+  .profile__card {
+    padding: 40px 24px;
+  }
+
+  .profile__name {
+    font-size: 1.5rem;
+  }
+}
