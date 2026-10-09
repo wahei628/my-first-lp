@@ -80,12 +80,6 @@ body {
   letter-spacing: 0.08em;
 }
 
-.profile__name-en {
-  margin-top: 4px;
-  font-size: 0.875rem;
-  letter-spacing: 0.1em;
-  color: var(--color-muted);
-}
 
 .profile__role {
   display: inline-block;
