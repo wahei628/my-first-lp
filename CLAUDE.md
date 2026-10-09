@@ -6,9 +6,12 @@
 
 - HTML / CSS / JavaScript で構成されたランディングページ（LP）のプロジェクト
 - ファイル構成
-  - `profile/index.html` … ページ本体
-  - `profile/style.css` … スタイル
-  - `profile/script.js` … スクリプト
+  - `index/html` … ページ本体
+  - `style.css` … スタイル
+  - `script.js` … スクリプト
+  - `profile/index.html` … プロフィール
+  - `profile/style.css` … スタイル(プロフィール用)
+  - `profile/script.js` … スクリプト(プロフィール用)
 
 ## 使用技術
   - html
